@@ -1,0 +1,121 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 01 Assignment
+        function PrintObjectProperties(object){
+            if(Object.keys(object).length === 0){
+                console.log("Object is Empty");
+            }else{
+                for(let key in object){
+                    console.log(`${key}:${object[key]}`); 
+                }
+            }
+        }
+        let object = {
+                name:"Ashik Tokder",
+                age:25,
+                city:"Rangpur"
+            };
+        let object1 = { };
+        PrintObjectProperties(object);
+        PrintObjectProperties(object1)
+
+// 02 Assignment
+
+          function maxNumber(arr){
+            if(arr.length === 0){
+                return null;
+            }else{
+               return Math.max(...arr);
+            } 
+        }
+        console.log("2.Max = "+maxNumber([10,20,5,30,25]));
+        console.log("2.Null = "+maxNumber([]));
+// 03 Assignment
+        function mergeArray(arr1,arr2){
+            return [...arr1,arr2];
+        }
+        const arr1 = [1,2,3];
+        const arr2 = [4,5,6];
+        console.log("3. Merge Array = "+mergeArray(arr1,arr2));
+// 4 Assignment
+        const calculateSquare = (number) =>{
+            return number*number;
+        };
+        console.log("4. Square = "+calculateSquare(5));
+        console.log("4. Square = "+calculateSquare(8));
+// 05 Assignment
+        function doubleNumbers(numbers){
+            return numbers.map(numbers=>numbers*2);
+        }
+        const originalNumbers = [1,2,3,4,5];
+        const doubledNumbers = doubleNumbers(originalNumbers);
+              console.log("5. Double Number"+doubledNumbers);
+
+
+// 06 Assignment
+        class MathUtility{
+            static multiply(a,b){
+                return a*b;
+            }
+        }
+        console.log("6. Math Utility = "+MathUtility.multiply(5,3));
+        console.log("6. Math Utility = "+MathUtility.multiply(2,8));
+
+// 07 Assignment
+        class Animal{
+            constructor(name,sound){
+                this.name = name;
+                this.sound = sound;
+            }
+            makeSound(){
+                console.log(this.sound);
+            }
+        }
+        class Dog extends Animal{
+            fetch(){
+                console.log("7. Fetching the ball!");
+            }
+        }
+        const animal = new Animal("Lion","Roar");
+              animal.makeSound();
+        const dog = new Dog("Buddy","Woof");
+              dog.makeSound();
+              dog.fetch();
+// 08 Assignment
+
+    class Person{
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        introduce(){
+            console.log(`8. Hello, my name is ${this.name} and I am ${this.age} yaers old.`);
+        }
+    }
+
+    class Student extends Person{
+        constructor(name,age,major){
+            super(name,age);
+            this.major = major;
+        }
+        introduce(){
+            console.log(`8. Hello, my name is ${this.name}and I am ${this.age} yaers old. I am majoring in ${this.major}.`)
+        }
+    }
+    const person1 = new Person('John',30);
+          person1.introduce();
+
+    const student1 = new Student('Alice',20,'Computer Science');
+          student1.introduce();
+
+    </script>
+    
+</body>
+</html>
